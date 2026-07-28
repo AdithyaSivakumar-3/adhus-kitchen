@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adhu's Kitchen — Vegetarian cooking, made with love</title>
+<meta name="description" content="Home-cooked vegetarian dishes from scratch — South Indian classics, North Indian favourites and global comfort food from Adhu's Kitchen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&family=Kavivanar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- ornamental top border -->
+<div class="kolam-border" aria-hidden="true"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><img src="logo.svg" alt="" class="brand-logo"> Adhu's Kitchen</a>
+    <div class="nav-links">
+      <a href="#starters">Starters</a>
+      <a href="#mains">Mains</a>
+      <a href="#desserts">Desserts</a>
+      <a href="#about">About</a>
+    </div>
+    <button id="langToggle" class="lang-toggle" aria-label="switch language">தமிழ்</button>
+    <button id="navToggle" aria-label="menu">☰</button>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="hero-mandala" aria-hidden="true"></div>
+  <aside class="kural-panel kural-left" aria-label="Thirukkural in Tamil">
+    <img class="valluvar" src="valluvar_brown.png" alt="Thiruvalluvar">
+    <p class="kural-label">திருக்குறள்</p>
+    <p class="kural-ta" id="kuralTa"></p>
+    <p class="kural-num" id="kuralNumTa"></p>
+  </aside>
+  <aside class="kural-panel kural-right" aria-label="Thirukkural translation">
+    <div class="kural-orn">❦</div>
+    <p class="kural-label">On food &amp; feeding</p>
+    <p class="kural-en" id="kuralEn"></p>
+    <p class="kural-num" id="kuralNumEn"></p>
+  </aside>
+  <p class="hero-eyebrow">— வணக்கம் · welcome —</p>
+  <h1>Adhu's <em>Kitchen</em></h1>
+  <p class="hero-tag">Vegetarian cooking from my little kitchen — South Indian soul,<br class="d-only"> North Indian comfort, and the occasional worldly detour.</p>
+  <div class="hero-stats">
+    <div><span class="stat" data-count="88">0</span><small>dishes</small></div>
+    <div class="stat-dot"></div>
+    <div><span class="stat" data-count="100">0</span><small>% vegetarian</small></div>
+    <div class="stat-dot"></div>
+    <div><span class="stat" data-count="3">0</span><small>years of cooking</small></div>
+  </div>
+  <p class="hero-tribute">For <b>Appa</b>, <b>Amma</b> &amp; <b>Paati</b> — whose kitchens taught me everything before I ever touched a stove.<br>Every dish here carries a little of them.</p>
+</header>
+
+<!-- filter bar -->
+<div class="filterbar" id="filterbar">
+  <div class="cuisine-cards">
+    <button class="cui-card active" data-cuisine="all"><span class="cui-ico">🍽️</span><span class="cui-name">All</span></button>
+    <button class="cui-card" data-cuisine="south"><span class="cui-ico">🥥</span><span class="cui-name">South Indian</span></button>
+    <button class="cui-card" data-cuisine="north"><span class="cui-ico">🫓</span><span class="cui-name">North Indian</span></button>
+    <button class="cui-card" data-cuisine="indochinese"><span class="cui-ico">🥢</span><span class="cui-name">Asian</span></button>
+    <button class="cui-card" data-cuisine="global"><span class="cui-ico">🌍</span><span class="cui-name">World</span></button>
+  </div>
+  <div class="filter-row">
+    <div class="filter-group">
+      <span class="filter-label">Course</span>
+      <button class="chip active" data-course-filter="all">All</button>
+      <button class="chip" data-course-filter="starters">Starters</button>
+      <button class="chip" data-course-filter="mains">Mains</button>
+      <button class="chip" data-course-filter="desserts">Desserts</button>
+    </div>
+    <input id="search" type="search" placeholder="Search a dish…" aria-label="search dishes">
+    <button class="chip chip-surprise" id="surpriseBtn">🎲 Surprise me</button>
+  </div>
+</div>
+
+<section class="sig-section">
+  <div class="sig-head"><span>✨</span> Signature Specialities <span>✨</span></div>
+  <div class="sig-strip" id="sigStrip"></div>
+  <div class="monthback" id="monthback" hidden></div>
+</section>
+
+<main>
+  <section id="starters" class="course-section">
+    <div class="section-head">
+      <div class="divider" aria-hidden="true"><span>✦</span></div>
+      <h2>Starters <span class="hindi">& small bites</span></h2>
+      <p class="section-sub">Crisp, hot and dangerous to share.</p>
+    </div>
+    <div class="grid" data-course="starters"></div>
+  </section>
+
+  <section id="mains" class="course-section alt">
+    <div class="section-head">
+      <div class="divider" aria-hidden="true"><span>✦</span></div>
+      <h2>Main Course</h2>
+      <p class="section-sub">Kuzhambus, curries, rice and everything the table gathers around.</p>
+    </div>
+    <div class="grid" data-course="mains"></div>
+  </section>
+
+  <section id="desserts" class="course-section">
+    <div class="section-head">
+      <div class="divider" aria-hidden="true"><span>✦</span></div>
+      <h2>Desserts <span class="hindi">& sweet endings</span></h2>
+      <p class="section-sub">Payasams, halwas and a few buttery detours.</p>
+    </div>
+    <div class="grid" data-course="desserts"></div>
+  </section>
+
+  <div class="empty-note" id="emptyNote" hidden>No dishes match those filters — loosen up the spice? 🌶️</div>
+
+  <section class="suggest" id="suggest">
+    <div class="suggest-card">
+      <h2>🍳 What should I cook next?</h2>
+      <p>Name a dish — I'll try it, plate it, and it might just earn a spot on this site.</p>
+      <div class="suggest-row">
+        <input id="suggestInput" type="text" placeholder="e.g. Kothu parotta…" aria-label="dish suggestion">
+        <button id="suggestBtn">Send →</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-card">
+      <div class="about-inner">
+      <div class="about-motif" aria-hidden="true">🍛</div>
+      <h2>The cook behind the kitchen</h2>
+      <p>I'm Adithya — engineer by profession, cook by pure joy. This site is three years of
+      evenings spent stirring kuzhambus and gravies the way they're made back home, folding
+      modaks for Ganesh Chaturthi, and occasionally letting a lasagna or ramen bowl crash
+      the party. Every photo here is a dish I cooked and plated myself.</p>
+      <p class="about-hungry">Feeling hungry scrolling through? Come over — I'll cook it for you, served with extra love <span class="heart">♥</span></p>
+      <p class="about-sign">— Adhu</p>
+      <p class="about-leafnote">🍃 served with love, on a banana leaf — the South Indian way</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="kolam-border" aria-hidden="true"></div>
+  <p>Made with <span class="heart">♥</span> and a lot of ghee · Adhu's Kitchen · 2026<br>
+  <span class="foot-tribute">inspired by Appa, Amma &amp; Paati's cooking</span></p>
+</footer>
+
+<button id="toTop" aria-label="back to top" hidden>🥄<span>↑</span></button>
+<nav class="progress-dots" aria-label="sections">
+  <a href="#starters" data-dot="starters" title="Starters"></a>
+  <a href="#mains" data-dot="mains" title="Mains"></a>
+  <a href="#desserts" data-dot="desserts" title="Desserts"></a>
+  <a href="#about" data-dot="about" title="About"></a>
+</nav>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lbClose" aria-label="close">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="previous">‹</button>
+  <figure>
+    <img id="lbImg" src="" alt="">
+    <figcaption>
+      <div class="lb-toprow"><h3 id="lbName"></h3><span id="lbFest" class="fest-badge"></span></div>
+      <p id="lbBlurb"></p>
+      <div class="lb-meta"><span id="lbCuisine"></span><span id="lbSpice"></span><span id="lbDate"></span></div>
+      <a id="lbWant" class="lb-want" target="_blank" rel="noopener">🍽 I want this! Cook it for me</a>
+    </figcaption>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="next">›</button>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
